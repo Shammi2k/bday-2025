@@ -23,7 +23,7 @@ body {
     width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
     max-width: 600px; /* Limit the maximum width */
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease-out; /* Add transition for transform and opacity */
     object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
@@ -35,6 +35,8 @@ body {
     top: 0%;
     left: 0%;
     scale: 50%;
+    transition: transform 0.5s ease-in-out; /* Add transition for transform */
+    z-index: 10;
 }
 
 .n1 {
@@ -111,4 +113,26 @@ body {
     object-fit: cover; /* Cover the container while maintaining aspect ratio */
     top: 6%;
     left: 0%;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards, scaleDown 0.5s forwards; /* Apply fade-out and scale-down animations */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes scaleDown {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
 }
