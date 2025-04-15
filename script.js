@@ -8,23 +8,25 @@ number.addEventListener('click', (event) => {
 
     // Set the position of the clickable image to the center of the screen
     number.classList.add('fade-out');
-    mainImage.style.opacity = 0; // Fade out
+    mainImage.classList.add('flip');
     setTimeout(() => {
         let numAlt = number.getAttribute('alt');
         mainImage.src = 'images/p' + numAlt + '.jpg'; // Change to person image
-        mainImage.onload = () => {
-            mainImage.style.opacity = 1; // Fade in
-            resetClickableImage();
-            let nextNum = parseInt(numAlt) + 1;
-            number.classList.remove('n' + numAlt);
-            number.classList.add('n' + nextNum);
-            if (nextNum == 11) {
-                number.classList.remove('clickable');
-                number.removeEventListener('click');
-            }
+        mainImage.classList.remove('flip');
+        resetClickableImage();
+        let nextNum = parseInt(numAlt) + 1;
+        number.classList.remove('n' + numAlt);
+        number.classList.add('n' + nextNum);
+        if (nextNum == 11) {
+            number.classList.remove('clickable');
+            number.removeEventListener('click');
+        }
+        number.style.visibility = 'hidden';
+        setTimeout(() => {
             number.setAttribute('src', 'images/n' + nextNum + '.svg');
-            number.setAttribute('alt', nextNum);
-        };
+            number.style.visibility = 'visible';
+        }, 300);
+        number.setAttribute('alt', nextNum);
     }, 500); // Wait for fade out to complete
 });
 
