@@ -12,17 +12,16 @@ number.addEventListener('click', (event) => {
     setTimeout(() => {
         let numAlt = number.getAttribute('alt');
         mainImage.src = 'images/p' + numAlt + '.jpg'; // Change to person image
-        mainImage.classList.remove('flip');
         resetClickableImage();
         let nextNum = parseInt(numAlt) + 1;
         number.classList.remove('n' + numAlt);
         number.classList.add('n' + nextNum);
         if (nextNum == 11) {
             number.classList.remove('clickable');
-            number.removeEventListener('click');
         }
         number.style.visibility = 'hidden';
         setTimeout(() => {
+            mainImage.classList.remove('flip');
             number.setAttribute('src', 'images/n' + nextNum + '.svg');
             number.style.visibility = 'visible';
         }, 300);
