@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    background-color: #FFE6EE;
+}
+
+.container {
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    max-width: 100%; /* Ensure the container does not exceed the viewport */
+    overflow: hidden; /* Hide overflow to maintain aspect ratio */
+}
+
+#main-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Limit the maximum width */
+    transition: opacity 0.5s ease;
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+
+.clickable {
+    position: absolute;
+    cursor: pointer;
+    width: 50px; /* Set a fixed width for the clickable image */
+    height: auto; /* Maintain aspect ratio */
+    top: 0%;
+    left: 0%;
+    scale: 50%;
+}
+
+.n1 {
+    left: 85%;
+    top: 10%;
+    opacity: 50%;
+}
+
+.n2 {
+    left: 78%;
+    top: 82%;
+    scale: 120%;
+    opacity: 50%;
+}
+
+.n3 {
+    left: 1%;
+    top: 72%;
+    scale: 120%;
+}
+
+.n4 {
+    left: 82%;
+    top: 48%;
+    scale: 100%;
+    opacity: 40%;
+}
+
+.n5 {
+    left: 3%;
+    top: 38%;
+    scale: 60%;
+}
+
+.n6 {
+    left: 78.5%;
+    top: 83%;
+    scale: 40%;
+    opacity: 80%;
+}
+
+.n7 {
+    left: 86%;
+    top: 46%;
+    scale: 50%;
+    opacity: 100%;
+}
+
+.n8 {
+    left: 57.5%;
+    top: 19%;
+    scale: 40%;
+    opacity: 100%;
+}
+
+.n9 {
+    left: 79%;
+    top: 74%;
+    scale: 80%;
+    opacity: 100%;
+}
+
+.n10 {
+    left: 85.4%;
+    top: 57%;
+    scale: 80%;
+    opacity: 80%;
+}
+
+.n11 {
+    position: fixed;
+    width: 100%;
+    scale: 100%;
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    top: 6%;
+    left: 0%;
+}
